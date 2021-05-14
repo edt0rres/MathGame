@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MathGame</string>
+    <string name="et_name">What is your name?</string>
+    <string name="mainButton">Let\'s Play!</string>
 </resources>
