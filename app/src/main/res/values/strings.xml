@@ -2,4 +2,9 @@
     <string name="app_name">MathGame</string>
     <string name="et_name">What is your name?</string>
     <string name="mainButton">Let\'s Play!</string>
+
+    <string name="et_lives"> Hearts: </string>
+    <string name="name_player"> Player: </string>
+    <string name="total_score"> Score: 0 </string>
+    <string name="et_answer"> Answer: </string>
 </resources>

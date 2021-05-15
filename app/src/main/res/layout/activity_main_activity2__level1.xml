@@ -1,9 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/grass"
     tools:context=".MainActivity2_Level1">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="321dp"
+        android:text="@string/name_player"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="307dp"
+        android:text="@string/total_score"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_hearts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_score"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="324dp"
+        android:text="@string/et_lives"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tv_hearts"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="313dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/threehearts" />
+
+    <ImageView
+        android:id="@+id/imageView_numberone"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="77dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/zero" />
+
+    <ImageView
+        android:id="@+id/imageView_sign"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/imageView"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="75dp"
+        android:layout_toEndOf="@+id/imageView_numberone"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/plussign" />
+
+    <ImageView
+        android:id="@+id/imageView_numbertwo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="27dp"
+        android:layout_toEndOf="@+id/imageView_sign"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/zero" />
+
+    <EditText
+        android:id="@+id/editText_answer"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/imageView_sign"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="162dp"
+        android:ems="10"
+        android:hint="@string/et_answer"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@+id/editText_answer"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="160dp"
+        android:text="Button" />
+</RelativeLayout>
