@@ -47,7 +47,7 @@
         android:textSize="18sp" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView_lives"
         android:layout_width="80dp"
         android:layout_height="25dp"
         android:layout_below="@+id/tv_hearts"
@@ -63,7 +63,7 @@
         android:id="@+id/imageView_numberone"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageView_lives"
         android:layout_alignParentStart="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="77dp"
@@ -74,7 +74,7 @@
         android:id="@+id/imageView_sign"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageView_lives"
         android:layout_marginStart="3dp"
         android:layout_marginTop="75dp"
         android:layout_toEndOf="@+id/imageView_numberone"
@@ -85,7 +85,7 @@
         android:id="@+id/imageView_numbertwo"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageView_lives"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="76dp"
@@ -118,5 +118,6 @@
         android:layout_marginStart="150dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="160dp"
-        android:text="Button" />
+        android:onClick="Compare"
+        android:text="Check" />
 </RelativeLayout>

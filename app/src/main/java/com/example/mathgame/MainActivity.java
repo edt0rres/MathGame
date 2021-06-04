@@ -16,12 +16,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    //declaring variables
     private EditText et_name;
     private ImageView iv_characters;
     private TextView tv_bestScore;
     private MediaPlayer mp;
 
+    //I had to cast the variable in order to make it integer.
     int num_random = (int) (Math.random() * 10);
+
 
 
     @Override
@@ -29,13 +32,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //variables are linked to design objects
+
         et_name = (EditText) findViewById(R.id.txt_name);
         iv_characters = (ImageView) findViewById(R.id.imageView_Character);
         tv_bestScore = (TextView) findViewById(R.id.textView_bestScore);
 
+        //setting the app icon to true so it can show in the app library
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
+        // int id will hold the image routes. images will change due to randomization.
         int id;
         if (num_random == 0 || num_random == 10) {
             id = getResources().getIdentifier("zebra", "drawable", getPackageName());
@@ -54,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             iv_characters.setImageResource(id);
         }
 
+        //Database Area = getting data from table created.
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "db", null,1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
@@ -67,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         }
         db.close();
 
-        //mp = MediaPlayer.create(this, R.raw.);
+        mp = MediaPlayer.create(this, R.raw.levelsounds);
         mp.start();
         mp.setLooping(true);
     }
