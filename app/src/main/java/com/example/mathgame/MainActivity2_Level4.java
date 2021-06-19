@@ -1,7 +1,5 @@
 package com.example.mathgame;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,11 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity2_Level2 extends AppCompatActivity {
+public class MainActivity2_Level4 extends AppCompatActivity {
+
     private TextView tv_name, tv_score;
-    private ImageView iv_one, iv_two, iv_lives;
+    private ImageView iv_one, iv_two, iv_lives, ImageView_sign;
     private EditText et_answer;
     private MediaPlayer mp, mp_great, mp_bad;
 
@@ -32,16 +31,17 @@ public class MainActivity2_Level2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_activity2__level1);
+        setContentView(R.layout.activity_main_activity2_level4);
 
 
-        Toast.makeText(this, "Level 2 - Advanced Addition", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Level 4 - Addition & Subtraction", Toast.LENGTH_SHORT).show();
 
         tv_name = (TextView)findViewById(R.id.tv_name);
         tv_score = (TextView)findViewById(R.id.tv_score);
         iv_one = (ImageView)findViewById(R.id.imageView_numberone);
         iv_two = (ImageView)findViewById(R.id.imageView_numbertwo);
         iv_lives = (ImageView)findViewById(R.id.imageView_lives);
+        ImageView_sign = (ImageView)findViewById(R.id.imageView_sign);
         et_answer = (EditText)findViewById(R.id.editText_answer);
 
 
@@ -120,13 +120,23 @@ public class MainActivity2_Level2 extends AppCompatActivity {
     }
 
     public void randomNum(){
-        if (score <= 19) {
+        if (score <= 39) {
 
             numRandom1 = (int) (Math.random() * 10);
             numRandom2 = (int) (Math.random() * 10);
 
-            result = numRandom1 + numRandom2;
+            result = numRandom1 - numRandom2;
 
+            if(numRandom1 >= 0 && numRandom1 <=4){
+                result = numRandom1 + numRandom2;
+                ImageView_sign.setImageResource(R.drawable.plussign);
+            }else{
+                result = numRandom1 - numRandom2;
+                ImageView_sign.setImageResource(R.drawable.minussign);
+
+            }
+
+            if(result >= 0){
                 for (int i = 0; i < number.length; i++){
                     int id = getResources().getIdentifier(number[i],"drawable", getPackageName());
                     if(numRandom1 == i){
@@ -135,10 +145,15 @@ public class MainActivity2_Level2 extends AppCompatActivity {
                         iv_two.setImageResource(id);
                     }
                 }
+            }else{
+                randomNum();
+            }
+
+
 
 
         }else{
-            Intent intent = new Intent(this, MainActivity2_Level3.class);
+            Intent intent = new Intent(this, MainActivity2_Level5.class);
 
             string_score = String.valueOf(score);
             string_lives = String.valueOf(lives);

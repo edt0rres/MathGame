@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grass"
-    tools:context=".MainActivity2_Level2">
+    tools:context=".MainActivity2_Level3">
 
     <TextView
         android:id="@+id/tv_name"
@@ -79,7 +79,7 @@
         android:layout_marginTop="75dp"
         android:layout_toEndOf="@+id/imageView_numberone"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/plussign" />
+        app:srcCompat="@drawable/minussign" />
 
     <ImageView
         android:id="@+id/imageView_numbertwo"
