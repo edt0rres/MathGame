@@ -1,5 +1,7 @@
 package com.example.mathgame;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,9 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity2_Level4 extends AppCompatActivity {
+public class MainActivity2_Level6 extends AppCompatActivity {
 
     private TextView tv_name, tv_score;
     private ImageView iv_one, iv_two, iv_lives, ImageView_sign;
@@ -31,10 +31,10 @@ public class MainActivity2_Level4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_activity2_level4);
+        setContentView(R.layout.activity_main_activity2_level6);
 
 
-        Toast.makeText(this, "Level 4 - Addition & Subtraction", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Level 6 - Addition, subtraction & Multiplication", Toast.LENGTH_SHORT).show();
 
         tv_name = (TextView)findViewById(R.id.tv_name);
         tv_score = (TextView)findViewById(R.id.tv_score);
@@ -120,17 +120,20 @@ public class MainActivity2_Level4 extends AppCompatActivity {
     }
 
     public void randomNum(){
-        if (score <= 49) {
+        if (score <= 100) {
 
             numRandom1 = (int) (Math.random() * 10);
             numRandom2 = (int) (Math.random() * 10);
 
-            if(numRandom1 >=0 && numRandom2<=4){
+            if(numRandom1 >=0 && numRandom2<=3){
                 result = numRandom1 + numRandom2;
                 ImageView_sign.setImageResource(R.drawable.plussign);
-            }else{
+            }else if(numRandom1 >=4 && numRandom2<=7){
                 result = numRandom1 - numRandom2;
                 ImageView_sign.setImageResource(R.drawable.minussign);
+            }else{
+                result = numRandom1 * numRandom2;
+                ImageView_sign.setImageResource(R.drawable.multiplicationsign);
             }
 
             if(result >=0){
@@ -147,13 +150,9 @@ public class MainActivity2_Level4 extends AppCompatActivity {
             }
 
         }else{
-            Intent intent = new Intent(this, MainActivity2_Level6.class);
+            Intent intent = new Intent(this, MainActivity.class);
 
-            string_score = String.valueOf(score);
-            string_lives = String.valueOf(lives);
-            intent.putExtra("player", name_player);
-            intent.putExtra("score", string_score);
-            intent.putExtra("lives", string_lives);
+            Toast.makeText(this, "Well Done! You're a genius.", Toast.LENGTH_SHORT).show();
 
             startActivity(intent);
             finish();

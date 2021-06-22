@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MathGame">
-        <activity android:name=".MainActivity2_Level5"></activity>
+        <activity android:name=".MainActivity2_Level6"></activity>
+        <activity android:name=".MainActivity2_Level5" />
         <activity android:name=".MainActivity2_Level4" />
         <activity android:name=".MainActivity2_Level3" />
         <activity android:name=".MainActivity2_Level2" />
